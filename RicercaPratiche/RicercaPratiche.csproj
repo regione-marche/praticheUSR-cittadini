@@ -1,0 +1,344 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE16B698-1CE4-4D10-A062-2001B1C1ACCF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RicercaPratiche</RootNamespace>
+    <AssemblyName>RicercaPratiche</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetNuke">
+      <HintPath>..\..\..\..\OneDrive\works\LAVORI\rm.intra\Bin\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Default.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\AutorizzazionePagamentoSAL.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\ConcessioneContributo.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\ConferenzaRegionale.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\EsecuzioneLavori.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaComune.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaSAL.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaUSR.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaComune.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaSALUSR.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaUSR.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\PreavvisoDiRigetto.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\PreavvisoRigetto.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\Sanatoria.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\VerificaAmmissibilitaComune.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\VerificaAmmissibilitaUSR.aspx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\green.png" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\red.png" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\View.ascx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\White.png" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\yellow.png" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\_Green.png" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\_Red.png" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\_Yellow.png" />
+    <Content Include="Global.asax" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="Models\wsSisma16DBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>wsSisma16DBModel.edmx</DependentUpon>
+      <LastGenOutput>wsSisma16DBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\wsSisma16DBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>wsSisma16DBModel.edmx</DependentUpon>
+      <LastGenOutput>wsSisma16DBModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModuleTest.aspx" />
+    <Content Include="SQL\CreateTables_Sql.txt" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\AutorizzazionePagamentoSAL.aspx.cs">
+      <DependentUpon>AutorizzazionePagamentoSAL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\AutorizzazionePagamentoSAL.aspx.designer.cs">
+      <DependentUpon>AutorizzazionePagamentoSAL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\ConcessioneContributo.aspx.cs">
+      <DependentUpon>ConcessioneContributo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\ConcessioneContributo.aspx.designer.cs">
+      <DependentUpon>ConcessioneContributo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\ConferenzaRegionale.aspx.cs">
+      <DependentUpon>ConferenzaRegionale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\ConferenzaRegionale.aspx.designer.cs">
+      <DependentUpon>ConferenzaRegionale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\EsecuzioneLavori.aspx.cs">
+      <DependentUpon>EsecuzioneLavori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\EsecuzioneLavori.aspx.designer.cs">
+      <DependentUpon>EsecuzioneLavori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaComune.aspx.cs">
+      <DependentUpon>IntegrazioneProfessionistaComune.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaComune.aspx.designer.cs">
+      <DependentUpon>IntegrazioneProfessionistaComune.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaSAL.aspx.cs">
+      <DependentUpon>IntegrazioneProfessionistaSAL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaSAL.aspx.designer.cs">
+      <DependentUpon>IntegrazioneProfessionistaSAL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaUSR.aspx.cs">
+      <DependentUpon>IntegrazioneProfessionistaUSR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IntegrazioneProfessionistaUSR.aspx.designer.cs">
+      <DependentUpon>IntegrazioneProfessionistaUSR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaComune.aspx.cs">
+      <DependentUpon>IstruttoriaComune.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaComune.aspx.designer.cs">
+      <DependentUpon>IstruttoriaComune.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaSALUSR.aspx.cs">
+      <DependentUpon>IstruttoriaSALUSR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaSALUSR.aspx.designer.cs">
+      <DependentUpon>IstruttoriaSALUSR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaUSR.aspx.cs">
+      <DependentUpon>IstruttoriaUSR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\IstruttoriaUSR.aspx.designer.cs">
+      <DependentUpon>IstruttoriaUSR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\PreavvisoDiRigetto.aspx.cs">
+      <DependentUpon>PreavvisoDiRigetto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\PreavvisoDiRigetto.aspx.designer.cs">
+      <DependentUpon>PreavvisoDiRigetto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\PreavvisoRigetto.aspx.cs">
+      <DependentUpon>PreavvisoRigetto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\PreavvisoRigetto.aspx.designer.cs">
+      <DependentUpon>PreavvisoRigetto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\Sanatoria.aspx.cs">
+      <DependentUpon>Sanatoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\Sanatoria.aspx.designer.cs">
+      <DependentUpon>Sanatoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\VerificaAmmissibilitaComune.aspx.cs">
+      <DependentUpon>VerificaAmmissibilitaComune.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\VerificaAmmissibilitaComune.aspx.designer.cs">
+      <DependentUpon>VerificaAmmissibilitaComune.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\VerificaAmmissibilitaUSR.aspx.cs">
+      <DependentUpon>VerificaAmmissibilitaUSR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Dettagli\VerificaAmmissibilitaUSR.aspx.designer.cs">
+      <DependentUpon>VerificaAmmissibilitaUSR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\HandlerDetails.ashx.cs">
+      <DependentUpon>HandlerDetails.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\HandlerDeteilsRequest.ashx.cs">
+      <DependentUpon>HandlerDeteilsRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesktopModules\RegioneMarche2016\RicercaPratiche\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tmpVB01StatoFasiPratica.cs">
+      <DependentUpon>wsSisma16DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tmpvB02DettaglioPratica.cs">
+      <DependentUpon>wsSisma16DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wsSisma16DBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wsSisma16DBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wsSisma16DBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wsSisma16DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wsSisma16DBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wsSisma16DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleTest.aspx.cs">
+      <DependentUpon>ModuleTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleTest.aspx.designer.cs">
+      <DependentUpon>ModuleTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\HandlerDetails.ashx" />
+    <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\HandlerDeteilsRequest.ashx" />
+    <EntityDeploy Include="Models\wsSisma16DBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>wsSisma16DBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\wsSisma16DBModel.edmx.diagram">
+      <DependentUpon>wsSisma16DBModel.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="DesktopModules\RegioneMarche2016\RicercaPratiche\Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53951</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53951/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="wsSisma16DBEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tmpVB01StatoFasiPratica">
+          <Key>
+            <PropertyRef Name="IdRichiesta" />
+          </Key>
+          <Property Name="IdRichiesta" Type="int" Nullable="false" />
+          <Property Name="CodiceFascicolo" Type="varchar" MaxLength="50" />
+          <Property Name="Ordinanza" Type="varchar" MaxLength="50" />
+          <Property Name="DestinazioneUso" Type="varchar" MaxLength="255" />
+          <Property Name="Comune" Type="varchar" MaxLength="50" />
+          <Property Name="IstatComune" Type="varchar" MaxLength="255" />
+          <Property Name="CodiceProvincia" Type="varchar" MaxLength="20" />
+          <Property Name="VerificaAmmissibilitaUSR" Type="varchar" MaxLength="1" />
+          <Property Name="VerificaAmmissibilitaCM" Type="varchar" MaxLength="1" />
+          <Property Name="PreavvisoRigetto1" Type="varchar" MaxLength="1" />
+          <Property Name="PraticaRigettata1" Type="int" Nullable="false" />
+          <Property Name="IstruttoriaCM" Type="varchar" MaxLength="1" />
+          <Property Name="RichiestaIntegrazioniCM" Type="varchar" MaxLength="1" />
+          <Property Name="SanatoriaCM" Type="varchar" MaxLength="1" />
+          <Property Name="ConferenzaRegionale" Type="varchar" MaxLength="1" />
+          <Property Name="IstruttoriaUSR" Type="varchar" MaxLength="1" />
+          <Property Name="RichiestaIntegrazioniUSR" Type="varchar" MaxLength="1" />
+          <Property Name="ControlloSismico" Type="varchar" MaxLength="1" />
+          <Property Name="PreavvisoRigetto2" Type="varchar" MaxLength="1" />
+          <Property Name="PraticaRigettata2" Type="int" Nullable="false" />
+          <Property Name="ConcessioneContributoUSR" Type="varchar" MaxLength="1" />
+          <Property Name="EsecuzioneLavori" Type="varchar" MaxLength="1" />
+          <Property Name="IstruttoriaSAL" Type="varchar" MaxLength="1" />
+          <Property Name="RichiestaIntegrazioniSAL" Type="varchar" MaxLength="1" />
+          <Property Name="AutorizzazionePagamento" Type="varchar" MaxLength="1" />
+          <Property Name="PraticaConclusa" Type="int" Nullable="false" />
+          <Property Name="Rinuncia" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errori trovati durante la generazione:
+avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'Sismica_Sisma16_DB.dbo.tmpvB02DettaglioPratica'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.-->
+        <EntityType Name="tmpvB02DettaglioPratica">
+          <Key>
+            <PropertyRef Name="IdRichiesta" />
+            <PropertyRef Name="LivelloOperativo" />
+            <PropertyRef Name="Casa_1_2" />
+            <PropertyRef Name="PraticaRigettata" />
+            <PropertyRef Name="SanatoriaCompletata" />
+            <PropertyRef Name="RitiroDomanda" />
+            <PropertyRef Name="IsVariante" />
+          </Key>
+          <Property Name="IdRichiesta" Type="int" Nullable="false" />
+          <Property Name="CodiceFascicolo" Type="varchar" MaxLength="50" />
+          <Property Name="CodicePratica" Type="varchar" MaxLength="255" />
+          <Property Name="NumeroIntervento" Type="varchar" MaxLength="50" />
+          <Property Name="Ordinanza" Type="varchar" MaxLength="50" />
+          <Property Name="IstruttoreUSR" Type="varchar" MaxLength="101" />
+          <Property Name="EmailIstruttoreUSR" Type="varchar" MaxLength="255" />
+          <Property Name="GruppoIstruttoreUSR" Type="varchar" MaxLength="50" />
+          <Property Name="IdUtenteIstruttoreUSR" Type="int" />
+          <Property Name="IdUtenteIstruttoreSAL" Type="int" />
+          <Property Name="IstruttoreSAL" Type="varchar" MaxLength="101" />
+          <Property Name="EmailIstruttoreSAL" Type="varchar" MaxLength="255" />
+          <Property Name="GruppoIstruttoreSAL" Type="varchar" MaxLength="50" />
+          <Property Name="NumProtocollo" Type="int" />
+          <Property Name="DataProtocollo" Type="datetime" />
+          <Property Name="NumPrimoProtocollo" Type="int" />
+          <Property Name="DataPrimoProtocollo" Type="datetime" />
+          <Property Name="Intestatario" Type="varchar" MaxLength="255" />
+          <Property Name="CodiceFiscaleIntestatario" Type="varchar" MaxLength="255" />
+          <Property Name="Progettista" Type="varchar" MaxLength="255" />
+          <Property Name="CodiceFiscaleProgettista" Type="varchar" MaxLength="255" />
+          <Property Name="Pec Tecnico" Type="varchar" MaxLength="255" />
+          <Property Name="IstatComune" Type="varchar" MaxLength="255" />
+          <Property Name="Comune" Type="varchar" MaxLength="50" />
+          <Property Name="Provincia" Type="varchar" MaxLength="20" />
+          <Property Name="Foglio" Type="varchar" MaxLength="255" />
+          <Property Name="Mappale" Type="varchar" MaxLength="255" />
+          <Property Name="Indirizzo" Type="varchar" MaxLength="255" />
+          <Property Name="DestinazioneUso" Type="varchar" MaxLength="255" />
+          <Property Name="LivelloOperativo" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Casa_1_2" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="ImpresaAppaltatrice" Type="varchar" MaxLength="255" />
+          <Property Name="ImpresaAppaltatricePartitaIva" Type="varchar" MaxLength="255" />
+          <Property Name="ImpresaAppaltatriceCodiceFiscale" Type="varchar" MaxLength="255" />
+          <Property Name="DataInvioChecklistComune" Type="datetime" />
+          <Property Name="DataAvvisoRigetto1" Type="datetime" />
+          <Property Name="PraticaRigettata" Type="int" Nullable="false" />
+          <Property Name="DataInizioIstruttoriaUSR" Type="datetime" />
+          <Property Name="DataTrasmissioneAComune" Type="datetime" />
+          <Property Name="DataSospensionePerimetrazioni" Type="datetime" />
+          <Property Name="DataRilascioPdC" Type="datetime" />
+          <Property Name="DataScadenzaRispostaComune" Type="datetime" />
+          <Property Name="DataPrimaRichiestaIntComune" Type="datetime" />
+          <Property Name="DataUltimaRichiestaIntComune" Type="datetime" />
+          <Property Name="DataRicezioneUltimaIntComune" Type="datetime" />
+          <Property Name="DataSanatoria" Type="datetime" />
+          <Property Name="SanatoriaCompletata" Type="int" Nullable="false" />
+          <Property Name="DataRichiestaConferenzaReg" Type="datetime" />
+          <Property Name="DataConvocazioneConferenzaReg" Type="datetime" />
+          <Property Name="DataEsitoConferenzaReg" Type="datetime" />
+          <Property Name="DataAttestatoAvvenutoDeposito" Type="datetime" />
+          <Property Name="DataPrimaRichiestaIntUSR" Type="datetime" />
+          <Property Name="DataUltimaRichiestaIntUSR" Type="datetime" />
+          <Property Name="DataRicezioneUltimaIntUSR" Type="datetime" />
+          <Property Name="DataAvvisoRigetto2" Type="datetime" />
+          <Property Name="DataTrasmDecretoRigetto" Type="datetime" />
+          <Property Name="DataAutProrogaFL" Type="datetime" />
+          <Property Name="NumDecretoContributo" Type="varchar" MaxLength="50" />
+          <Property Name="DataDecretoContributo" Type="datetime" />
+          <Property Name="ContributoConcesso" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NumDecretoRideterminato" Type="varchar" MaxLength="50" />
+          <Property Name="DataDecretoRideterminato" Type="datetime" />
+          <Property Name="DataPresentazioneSal0" Type="datetime" />
+          <Property Name="DataPresentazioneSal20" Type="datetime" />
+          <Property Name="DataPresentazioneSal40" Type="datetime" />
+          <Property Name="DataPresentazioneSal50" Type="datetime" />
+          <Property Name="DataPresentazioneSal70" Type="datetime" />
+          <Property Name="DataPresentazioneSalFL" Type="datetime" />
+          <Property Name="DataRichiestaProrogaFL" Type="datetime" />
+          <Property Name="DataUltimaRichiestaIntSAL" Type="datetime" />
+          <Property Name="DataUltimaIntSal0" Type="datetime" />
+          <Property Name="DataUltimaIntSal20" Type="datetime" />
+          <Property Name="DataUltimaIntSal40" Type="datetime" />
+          <Property Name="DataUltimaIntSal50" Type="datetime" />
+          <Property Name="DataUltimaIntSal70" Type="datetime" />
+          <Property Name="DataUltimaIntSalFL" Type="datetime" />
+          <Property Name="ContributoRichiesto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ContributoRideterminato" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ContributoAmmissibile" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ContributoLiquidato" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="NumSalPresentati" Type="int" />
+          <Property Name="DataDecretoSal0" Type="datetime" />
+          <Property Name="NumeroDecretoSal0" Type="varchar" MaxLength="50" />
+          <Property Name="ImportoSal0Anticipo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ImportoSal0Spese" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ImportoSal0Totale" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="DataDecretoSal20" Type="datetime" />
+          <Property Name="NumeroDecretoSal20" Type="varchar" MaxLength="50" />
+          <Property Name="ImportoSal20Totale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DataDecretoSal40" Type="datetime" />
+          <Property Name="NumeroDecretoSal40" Type="varchar" MaxLength="50" />
+          <Property Name="ImportoSal40Totale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DataDecretoSal50" Type="datetime" />
+          <Property Name="NumeroDecretoSal50" Type="varchar" MaxLength="50" />
+          <Property Name="ImportoSal50Totale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DataDecretoSal70" Type="datetime" />
+          <Property Name="NumeroDecretoSal70" Type="varchar" MaxLength="50" />
+          <Property Name="ImportoSal70Totale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DataDecretoSalFL" Type="datetime" />
+          <Property Name="NumeroDecretoSalFL" Type="varchar" MaxLength="50" />
+          <Property Name="ImportoSalFLTotale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RitiroDomanda" Type="int" Nullable="false" />
+          <Property Name="StatoPratica" Type="nvarchar" MaxLength="49" />
+          <Property Name="CodStatoPratica" Type="varchar" MaxLength="24" />
+          <Property Name="IsVariante" Type="int" Nullable="false" />
+          <Property Name="SubAlterno1" Type="varchar" MaxLength="255" />
+          <Property Name="SubAlterno2" Type="varchar" MaxLength="255" />
+          <Property Name="SubAlterno3" Type="varchar" MaxLength="255" />
+          <Property Name="SubAlterno4" Type="varchar" MaxLength="255" />
+          <Property Name="CodiceAteco" Type="varchar" MaxLength="767" />
+          <Property Name="DataPresaInCaricoMIS" Type="datetime" />
+          <Property Name="Cup" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="wsSisma16DBEntitiesStoreContainer">
+          <EntitySet Name="tmpVB01StatoFasiPratica" EntityType="Self.tmpVB01StatoFasiPratica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tmpvB02DettaglioPratica" EntityType="Self.tmpvB02DettaglioPratica" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tmpvB02DettaglioPratica].[IdRichiesta] AS [IdRichiesta], 
+    [tmpvB02DettaglioPratica].[CodiceFascicolo] AS [CodiceFascicolo], 
+    [tmpvB02DettaglioPratica].[CodicePratica] AS [CodicePratica], 
+    [tmpvB02DettaglioPratica].[NumeroIntervento] AS [NumeroIntervento], 
+    [tmpvB02DettaglioPratica].[Ordinanza] AS [Ordinanza], 
+    [tmpvB02DettaglioPratica].[IstruttoreUSR] AS [IstruttoreUSR], 
+    [tmpvB02DettaglioPratica].[EmailIstruttoreUSR] AS [EmailIstruttoreUSR], 
+    [tmpvB02DettaglioPratica].[GruppoIstruttoreUSR] AS [GruppoIstruttoreUSR], 
+    [tmpvB02DettaglioPratica].[IdUtenteIstruttoreUSR] AS [IdUtenteIstruttoreUSR], 
+    [tmpvB02DettaglioPratica].[IdUtenteIstruttoreSAL] AS [IdUtenteIstruttoreSAL], 
+    [tmpvB02DettaglioPratica].[IstruttoreSAL] AS [IstruttoreSAL], 
+    [tmpvB02DettaglioPratica].[EmailIstruttoreSAL] AS [EmailIstruttoreSAL], 
+    [tmpvB02DettaglioPratica].[GruppoIstruttoreSAL] AS [GruppoIstruttoreSAL], 
+    [tmpvB02DettaglioPratica].[NumProtocollo] AS [NumProtocollo], 
+    [tmpvB02DettaglioPratica].[DataProtocollo] AS [DataProtocollo], 
+    [tmpvB02DettaglioPratica].[NumPrimoProtocollo] AS [NumPrimoProtocollo], 
+    [tmpvB02DettaglioPratica].[DataPrimoProtocollo] AS [DataPrimoProtocollo], 
+    [tmpvB02DettaglioPratica].[Intestatario] AS [Intestatario], 
+    [tmpvB02DettaglioPratica].[CodiceFiscaleIntestatario] AS [CodiceFiscaleIntestatario], 
+    [tmpvB02DettaglioPratica].[Progettista] AS [Progettista], 
+    [tmpvB02DettaglioPratica].[CodiceFiscaleProgettista] AS [CodiceFiscaleProgettista], 
+    [tmpvB02DettaglioPratica].[Pec Tecnico] AS [Pec Tecnico], 
+    [tmpvB02DettaglioPratica].[IstatComune] AS [IstatComune], 
+    [tmpvB02DettaglioPratica].[Comune] AS [Comune], 
+    [tmpvB02DettaglioPratica].[Provincia] AS [Provincia], 
+    [tmpvB02DettaglioPratica].[Foglio] AS [Foglio], 
+    [tmpvB02DettaglioPratica].[Mappale] AS [Mappale], 
+    [tmpvB02DettaglioPratica].[Indirizzo] AS [Indirizzo], 
+    [tmpvB02DettaglioPratica].[DestinazioneUso] AS [DestinazioneUso], 
+    [tmpvB02DettaglioPratica].[LivelloOperativo] AS [LivelloOperativo], 
+    [tmpvB02DettaglioPratica].[Casa_1_2] AS [Casa_1_2], 
+    [tmpvB02DettaglioPratica].[ImpresaAppaltatrice] AS [ImpresaAppaltatrice], 
+    [tmpvB02DettaglioPratica].[ImpresaAppaltatricePartitaIva] AS [ImpresaAppaltatricePartitaIva], 
+    [tmpvB02DettaglioPratica].[ImpresaAppaltatriceCodiceFiscale] AS [ImpresaAppaltatriceCodiceFiscale], 
+    [tmpvB02DettaglioPratica].[DataInvioChecklistComune] AS [DataInvioChecklistComune], 
+    [tmpvB02DettaglioPratica].[DataAvvisoRigetto1] AS [DataAvvisoRigetto1], 
+    [tmpvB02DettaglioPratica].[PraticaRigettata] AS [PraticaRigettata], 
+    [tmpvB02DettaglioPratica].[DataInizioIstruttoriaUSR] AS [DataInizioIstruttoriaUSR], 
+    [tmpvB02DettaglioPratica].[DataTrasmissioneAComune] AS [DataTrasmissioneAComune], 
+    [tmpvB02DettaglioPratica].[DataSospensionePerimetrazioni] AS [DataSospensionePerimetrazioni], 
+    [tmpvB02DettaglioPratica].[DataRilascioPdC] AS [DataRilascioPdC], 
+    [tmpvB02DettaglioPratica].[DataScadenzaRispostaComune] AS [DataScadenzaRispostaComune], 
+    [tmpvB02DettaglioPratica].[DataPrimaRichiestaIntComune] AS [DataPrimaRichiestaIntComune], 
+    [tmpvB02DettaglioPratica].[DataUltimaRichiestaIntComune] AS [DataUltimaRichiestaIntComune], 
+    [tmpvB02DettaglioPratica].[DataRicezioneUltimaIntComune] AS [DataRicezioneUltimaIntComune], 
+    [tmpvB02DettaglioPratica].[DataSanatoria] AS [DataSanatoria], 
+    [tmpvB02DettaglioPratica].[SanatoriaCompletata] AS [SanatoriaCompletata], 
+    [tmpvB02DettaglioPratica].[DataRichiestaConferenzaReg] AS [DataRichiestaConferenzaReg], 
+    [tmpvB02DettaglioPratica].[DataConvocazioneConferenzaReg] AS [DataConvocazioneConferenzaReg], 
+    [tmpvB02DettaglioPratica].[DataEsitoConferenzaReg] AS [DataEsitoConferenzaReg], 
+    [tmpvB02DettaglioPratica].[DataAttestatoAvvenutoDeposito] AS [DataAttestatoAvvenutoDeposito], 
+    [tmpvB02DettaglioPratica].[DataPrimaRichiestaIntUSR] AS [DataPrimaRichiestaIntUSR], 
+    [tmpvB02DettaglioPratica].[DataUltimaRichiestaIntUSR] AS [DataUltimaRichiestaIntUSR], 
+    [tmpvB02DettaglioPratica].[DataRicezioneUltimaIntUSR] AS [DataRicezioneUltimaIntUSR], 
+    [tmpvB02DettaglioPratica].[DataAvvisoRigetto2] AS [DataAvvisoRigetto2], 
+    [tmpvB02DettaglioPratica].[DataTrasmDecretoRigetto] AS [DataTrasmDecretoRigetto], 
+    [tmpvB02DettaglioPratica].[DataAutProrogaFL] AS [DataAutProrogaFL], 
+    [tmpvB02DettaglioPratica].[NumDecretoContributo] AS [NumDecretoContributo], 
+    [tmpvB02DettaglioPratica].[DataDecretoContributo] AS [DataDecretoContributo], 
+    [tmpvB02DettaglioPratica].[ContributoConcesso] AS [ContributoConcesso], 
+    [tmpvB02DettaglioPratica].[NumDecretoRideterminato] AS [NumDecretoRideterminato], 
+    [tmpvB02DettaglioPratica].[DataDecretoRideterminato] AS [DataDecretoRideterminato], 
+    [tmpvB02DettaglioPratica].[DataPresentazioneSal0] AS [DataPresentazioneSal0], 
+    [tmpvB02DettaglioPratica].[DataPresentazioneSal20] AS [DataPresentazioneSal20], 
+    [tmpvB02DettaglioPratica].[DataPresentazioneSal40] AS [DataPresentazioneSal40], 
+    [tmpvB02DettaglioPratica].[DataPresentazioneSal50] AS [DataPresentazioneSal50], 
+    [tmpvB02DettaglioPratica].[DataPresentazioneSal70] AS [DataPresentazioneSal70], 
+    [tmpvB02DettaglioPratica].[DataPresentazioneSalFL] AS [DataPresentazioneSalFL], 
+    [tmpvB02DettaglioPratica].[DataRichiestaProrogaFL] AS [DataRichiestaProrogaFL], 
+    [tmpvB02DettaglioPratica].[DataUltimaRichiestaIntSAL] AS [DataUltimaRichiestaIntSAL], 
+    [tmpvB02DettaglioPratica].[DataUltimaIntSal0] AS [DataUltimaIntSal0], 
+    [tmpvB02DettaglioPratica].[DataUltimaIntSal20] AS [DataUltimaIntSal20], 
+    [tmpvB02DettaglioPratica].[DataUltimaIntSal40] AS [DataUltimaIntSal40], 
+    [tmpvB02DettaglioPratica].[DataUltimaIntSal50] AS [DataUltimaIntSal50], 
+    [tmpvB02DettaglioPratica].[DataUltimaIntSal70] AS [DataUltimaIntSal70], 
+    [tmpvB02DettaglioPratica].[DataUltimaIntSalFL] AS [DataUltimaIntSalFL], 
+    [tmpvB02DettaglioPratica].[ContributoRichiesto] AS [ContributoRichiesto], 
+    [tmpvB02DettaglioPratica].[ContributoRideterminato] AS [ContributoRideterminato], 
+    [tmpvB02DettaglioPratica].[ContributoAmmissibile] AS [ContributoAmmissibile], 
+    [tmpvB02DettaglioPratica].[ContributoLiquidato] AS [ContributoLiquidato], 
+    [tmpvB02DettaglioPratica].[NumSalPresentati] AS [NumSalPresentati], 
+    [tmpvB02DettaglioPratica].[DataDecretoSal0] AS [DataDecretoSal0], 
+    [tmpvB02DettaglioPratica].[NumeroDecretoSal0] AS [NumeroDecretoSal0], 
+    [tmpvB02DettaglioPratica].[ImportoSal0Anticipo] AS [ImportoSal0Anticipo], 
+    [tmpvB02DettaglioPratica].[ImportoSal0Spese] AS [ImportoSal0Spese], 
+    [tmpvB02DettaglioPratica].[ImportoSal0Totale] AS [ImportoSal0Totale], 
+    [tmpvB02DettaglioPratica].[DataDecretoSal20] AS [DataDecretoSal20], 
+    [tmpvB02DettaglioPratica].[NumeroDecretoSal20] AS [NumeroDecretoSal20], 
+    [tmpvB02DettaglioPratica].[ImportoSal20Totale] AS [ImportoSal20Totale], 
+    [tmpvB02DettaglioPratica].[DataDecretoSal40] AS [DataDecretoSal40], 
+    [tmpvB02DettaglioPratica].[NumeroDecretoSal40] AS [NumeroDecretoSal40], 
+    [tmpvB02DettaglioPratica].[ImportoSal40Totale] AS [ImportoSal40Totale], 
+    [tmpvB02DettaglioPratica].[DataDecretoSal50] AS [DataDecretoSal50], 
+    [tmpvB02DettaglioPratica].[NumeroDecretoSal50] AS [NumeroDecretoSal50], 
+    [tmpvB02DettaglioPratica].[ImportoSal50Totale] AS [ImportoSal50Totale], 
+    [tmpvB02DettaglioPratica].[DataDecretoSal70] AS [DataDecretoSal70], 
+    [tmpvB02DettaglioPratica].[NumeroDecretoSal70] AS [NumeroDecretoSal70], 
+    [tmpvB02DettaglioPratica].[ImportoSal70Totale] AS [ImportoSal70Totale], 
+    [tmpvB02DettaglioPratica].[DataDecretoSalFL] AS [DataDecretoSalFL], 
+    [tmpvB02DettaglioPratica].[NumeroDecretoSalFL] AS [NumeroDecretoSalFL], 
+    [tmpvB02DettaglioPratica].[ImportoSalFLTotale] AS [ImportoSalFLTotale], 
+    [tmpvB02DettaglioPratica].[RitiroDomanda] AS [RitiroDomanda], 
+    [tmpvB02DettaglioPratica].[StatoPratica] AS [StatoPratica], 
+    [tmpvB02DettaglioPratica].[CodStatoPratica] AS [CodStatoPratica], 
+    [tmpvB02DettaglioPratica].[IsVariante] AS [IsVariante], 
+    [tmpvB02DettaglioPratica].[SubAlterno1] AS [SubAlterno1], 
+    [tmpvB02DettaglioPratica].[SubAlterno2] AS [SubAlterno2], 
+    [tmpvB02DettaglioPratica].[SubAlterno3] AS [SubAlterno3], 
+    [tmpvB02DettaglioPratica].[SubAlterno4] AS [SubAlterno4], 
+    [tmpvB02DettaglioPratica].[CodiceAteco] AS [CodiceAteco], 
+    [tmpvB02DettaglioPratica].[DataPresaInCaricoMIS] AS [DataPresaInCaricoMIS], 
+    [tmpvB02DettaglioPratica].[Cup] AS [Cup]
+    FROM [dbo].[tmpvB02DettaglioPratica] AS [tmpvB02DettaglioPratica]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="wsSisma16DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tmpVB01StatoFasiPratica">
+          <Key>
+            <PropertyRef Name="IdRichiesta" />
+          </Key>
+          <Property Name="IdRichiesta" Type="Int32" Nullable="false" />
+          <Property Name="CodiceFascicolo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ordinanza" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DestinazioneUso" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Comune" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IstatComune" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CodiceProvincia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VerificaAmmissibilitaUSR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="VerificaAmmissibilitaCM" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PreavvisoRigetto1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PraticaRigettata1" Type="Int32" Nullable="false" />
+          <Property Name="IstruttoriaCM" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="RichiestaIntegrazioniCM" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SanatoriaCM" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ConferenzaRegionale" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IstruttoriaUSR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="RichiestaIntegrazioniUSR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ControlloSismico" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PreavvisoRigetto2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PraticaRigettata2" Type="Int32" Nullable="false" />
+          <Property Name="ConcessioneContributoUSR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="EsecuzioneLavori" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IstruttoriaSAL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="RichiestaIntegrazioniSAL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AutorizzazionePagamento" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PraticaConclusa" Type="Int32" Nullable="false" />
+          <Property Name="Rinuncia" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tmpvB02DettaglioPratica">
+          <Key>
+            <PropertyRef Name="IdRichiesta" />
+            <PropertyRef Name="LivelloOperativo" />
+            <PropertyRef Name="Casa_1_2" />
+            <PropertyRef Name="PraticaRigettata" />
+            <PropertyRef Name="SanatoriaCompletata" />
+            <PropertyRef Name="RitiroDomanda" />
+            <PropertyRef Name="IsVariante" />
+          </Key>
+          <Property Name="IdRichiesta" Type="Int32" Nullable="false" />
+          <Property Name="CodiceFascicolo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodicePratica" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroIntervento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ordinanza" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IstruttoreUSR" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
+          <Property Name="EmailIstruttoreUSR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="GruppoIstruttoreUSR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdUtenteIstruttoreUSR" Type="Int32" />
+          <Property Name="IdUtenteIstruttoreSAL" Type="Int32" />
+          <Property Name="IstruttoreSAL" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
+          <Property Name="EmailIstruttoreSAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="GruppoIstruttoreSAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumProtocollo" Type="Int32" />
+          <Property Name="DataProtocollo" Type="DateTime" Precision="3" />
+          <Property Name="NumPrimoProtocollo" Type="Int32" />
+          <Property Name="DataPrimoProtocollo" Type="DateTime" Precision="3" />
+          <Property Name="Intestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CodiceFiscaleIntestatario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Progettista" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CodiceFiscaleProgettista" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Pec_Tecnico" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IstatComune" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Comune" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Provincia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Foglio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mappale" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Indirizzo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DestinazioneUso" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LivelloOperativo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Casa_1_2" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImpresaAppaltatrice" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ImpresaAppaltatricePartitaIva" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ImpresaAppaltatriceCodiceFiscale" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DataInvioChecklistComune" Type="DateTime" Precision="3" />
+          <Property Name="DataAvvisoRigetto1" Type="DateTime" Precision="3" />
+          <Property Name="PraticaRigettata" Type="Int32" Nullable="false" />
+          <Property Name="DataInizioIstruttoriaUSR" Type="DateTime" Precision="3" />
+          <Property Name="DataTrasmissioneAComune" Type="DateTime" Precision="3" />
+          <Property Name="DataSospensionePerimetrazioni" Type="DateTime" Precision="3" />
+          <Property Name="DataRilascioPdC" Type="DateTime" Precision="3" />
+          <Property Name="DataScadenzaRispostaComune" Type="DateTime" Precision="3" />
+          <Property Name="DataPrimaRichiestaIntComune" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaRichiestaIntComune" Type="DateTime" Precision="3" />
+          <Property Name="DataRicezioneUltimaIntComune" Type="DateTime" Precision="3" />
+          <Property Name="DataSanatoria" Type="DateTime" Precision="3" />
+          <Property Name="SanatoriaCompletata" Type="Int32" Nullable="false" />
+          <Property Name="DataRichiestaConferenzaReg" Type="DateTime" Precision="3" />
+          <Property Name="DataConvocazioneConferenzaReg" Type="DateTime" Precision="3" />
+          <Property Name="DataEsitoConferenzaReg" Type="DateTime" Precision="3" />
+          <Property Name="DataAttestatoAvvenutoDeposito" Type="DateTime" Precision="3" />
+          <Property Name="DataPrimaRichiestaIntUSR" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaRichiestaIntUSR" Type="DateTime" Precision="3" />
+          <Property Name="DataRicezioneUltimaIntUSR" Type="DateTime" Precision="3" />
+          <Property Name="DataAvvisoRigetto2" Type="DateTime" Precision="3" />
+          <Property Name="DataTrasmDecretoRigetto" Type="DateTime" Precision="3" />
+          <Property Name="DataAutProrogaFL" Type="DateTime" Precision="3" />
+          <Property Name="NumDecretoContributo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataDecretoContributo" Type="DateTime" Precision="3" />
+          <Property Name="ContributoConcesso" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NumDecretoRideterminato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataDecretoRideterminato" Type="DateTime" Precision="3" />
+          <Property Name="DataPresentazioneSal0" Type="DateTime" Precision="3" />
+          <Property Name="DataPresentazioneSal20" Type="DateTime" Precision="3" />
+          <Property Name="DataPresentazioneSal40" Type="DateTime" Precision="3" />
+          <Property Name="DataPresentazioneSal50" Type="DateTime" Precision="3" />
+          <Property Name="DataPresentazioneSal70" Type="DateTime" Precision="3" />
+          <Property Name="DataPresentazioneSalFL" Type="DateTime" Precision="3" />
+          <Property Name="DataRichiestaProrogaFL" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaRichiestaIntSAL" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaIntSal0" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaIntSal20" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaIntSal40" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaIntSal50" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaIntSal70" Type="DateTime" Precision="3" />
+          <Property Name="DataUltimaIntSalFL" Type="DateTime" Precision="3" />
+          <Property Name="ContributoRichiesto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ContributoRideterminato" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ContributoAmmissibile" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ContributoLiquidato" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="NumSalPresentati" Type="Int32" />
+          <Property Name="DataDecretoSal0" Type="DateTime" Precision="3" />
+          <Property Name="NumeroDecretoSal0" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportoSal0Anticipo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImportoSal0Spese" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImportoSal0Totale" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="DataDecretoSal20" Type="DateTime" Precision="3" />
+          <Property Name="NumeroDecretoSal20" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportoSal20Totale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DataDecretoSal40" Type="DateTime" Precision="3" />
+          <Property Name="NumeroDecretoSal40" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportoSal40Totale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DataDecretoSal50" Type="DateTime" Precision="3" />
+          <Property Name="NumeroDecretoSal50" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportoSal50Totale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DataDecretoSal70" Type="DateTime" Precision="3" />
+          <Property Name="NumeroDecretoSal70" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportoSal70Totale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DataDecretoSalFL" Type="DateTime" Precision="3" />
+          <Property Name="NumeroDecretoSalFL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportoSalFLTotale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RitiroDomanda" Type="Int32" Nullable="false" />
+          <Property Name="StatoPratica" Type="String" MaxLength="49" FixedLength="false" Unicode="true" />
+          <Property Name="CodStatoPratica" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="IsVariante" Type="Int32" Nullable="false" />
+          <Property Name="SubAlterno1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SubAlterno2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SubAlterno3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SubAlterno4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CodiceAteco" Type="String" MaxLength="767" FixedLength="false" Unicode="false" />
+          <Property Name="DataPresaInCaricoMIS" Type="DateTime" Precision="3" />
+          <Property Name="Cup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="wsSisma16DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tmpVB01StatoFasiPratica" EntityType="Self.tmpVB01StatoFasiPratica" />
+          <EntitySet Name="tmpvB02DettaglioPratica" EntityType="Self.tmpvB02DettaglioPratica" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="wsSisma16DBEntitiesStoreContainer" CdmEntityContainer="wsSisma16DBEntities">
+          <EntitySetMapping Name="tmpVB01StatoFasiPratica">
+            <EntityTypeMapping TypeName="wsSisma16DBModel.tmpVB01StatoFasiPratica">
+              <MappingFragment StoreEntitySet="tmpVB01StatoFasiPratica">
+                <ScalarProperty Name="IdRichiesta" ColumnName="IdRichiesta" />
+                <ScalarProperty Name="CodiceFascicolo" ColumnName="CodiceFascicolo" />
+                <ScalarProperty Name="Ordinanza" ColumnName="Ordinanza" />
+                <ScalarProperty Name="DestinazioneUso" ColumnName="DestinazioneUso" />
+                <ScalarProperty Name="Comune" ColumnName="Comune" />
+                <ScalarProperty Name="IstatComune" ColumnName="IstatComune" />
+                <ScalarProperty Name="CodiceProvincia" ColumnName="CodiceProvincia" />
+                <ScalarProperty Name="VerificaAmmissibilitaUSR" ColumnName="VerificaAmmissibilitaUSR" />
+                <ScalarProperty Name="VerificaAmmissibilitaCM" ColumnName="VerificaAmmissibilitaCM" />
+                <ScalarProperty Name="PreavvisoRigetto1" ColumnName="PreavvisoRigetto1" />
+                <ScalarProperty Name="PraticaRigettata1" ColumnName="PraticaRigettata1" />
+                <ScalarProperty Name="IstruttoriaCM" ColumnName="IstruttoriaCM" />
+                <ScalarProperty Name="RichiestaIntegrazioniCM" ColumnName="RichiestaIntegrazioniCM" />
+                <ScalarProperty Name="SanatoriaCM" ColumnName="SanatoriaCM" />
+                <ScalarProperty Name="ConferenzaRegionale" ColumnName="ConferenzaRegionale" />
+                <ScalarProperty Name="IstruttoriaUSR" ColumnName="IstruttoriaUSR" />
+                <ScalarProperty Name="RichiestaIntegrazioniUSR" ColumnName="RichiestaIntegrazioniUSR" />
+                <ScalarProperty Name="ControlloSismico" ColumnName="ControlloSismico" />
+                <ScalarProperty Name="PreavvisoRigetto2" ColumnName="PreavvisoRigetto2" />
+                <ScalarProperty Name="PraticaRigettata2" ColumnName="PraticaRigettata2" />
+                <ScalarProperty Name="ConcessioneContributoUSR" ColumnName="ConcessioneContributoUSR" />
+                <ScalarProperty Name="EsecuzioneLavori" ColumnName="EsecuzioneLavori" />
+                <ScalarProperty Name="IstruttoriaSAL" ColumnName="IstruttoriaSAL" />
+                <ScalarProperty Name="RichiestaIntegrazioniSAL" ColumnName="RichiestaIntegrazioniSAL" />
+                <ScalarProperty Name="AutorizzazionePagamento" ColumnName="AutorizzazionePagamento" />
+                <ScalarProperty Name="PraticaConclusa" ColumnName="PraticaConclusa" />
+                <ScalarProperty Name="Rinuncia" ColumnName="Rinuncia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tmpvB02DettaglioPratica">
+            <EntityTypeMapping TypeName="wsSisma16DBModel.tmpvB02DettaglioPratica">
+              <MappingFragment StoreEntitySet="tmpvB02DettaglioPratica">
+                <ScalarProperty Name="IdRichiesta" ColumnName="IdRichiesta" />
+                <ScalarProperty Name="CodiceFascicolo" ColumnName="CodiceFascicolo" />
+                <ScalarProperty Name="CodicePratica" ColumnName="CodicePratica" />
+                <ScalarProperty Name="NumeroIntervento" ColumnName="NumeroIntervento" />
+                <ScalarProperty Name="Ordinanza" ColumnName="Ordinanza" />
+                <ScalarProperty Name="IstruttoreUSR" ColumnName="IstruttoreUSR" />
+                <ScalarProperty Name="EmailIstruttoreUSR" ColumnName="EmailIstruttoreUSR" />
+                <ScalarProperty Name="GruppoIstruttoreUSR" ColumnName="GruppoIstruttoreUSR" />
+                <ScalarProperty Name="IdUtenteIstruttoreUSR" ColumnName="IdUtenteIstruttoreUSR" />
+                <ScalarProperty Name="IdUtenteIstruttoreSAL" ColumnName="IdUtenteIstruttoreSAL" />
+                <ScalarProperty Name="IstruttoreSAL" ColumnName="IstruttoreSAL" />
+                <ScalarProperty Name="EmailIstruttoreSAL" ColumnName="EmailIstruttoreSAL" />
+                <ScalarProperty Name="GruppoIstruttoreSAL" ColumnName="GruppoIstruttoreSAL" />
+                <ScalarProperty Name="NumProtocollo" ColumnName="NumProtocollo" />
+                <ScalarProperty Name="DataProtocollo" ColumnName="DataProtocollo" />
+                <ScalarProperty Name="NumPrimoProtocollo" ColumnName="NumPrimoProtocollo" />
+                <ScalarProperty Name="DataPrimoProtocollo" ColumnName="DataPrimoProtocollo" />
+                <ScalarProperty Name="Intestatario" ColumnName="Intestatario" />
+                <ScalarProperty Name="CodiceFiscaleIntestatario" ColumnName="CodiceFiscaleIntestatario" />
+                <ScalarProperty Name="Progettista" ColumnName="Progettista" />
+                <ScalarProperty Name="CodiceFiscaleProgettista" ColumnName="CodiceFiscaleProgettista" />
+                <ScalarProperty Name="Pec_Tecnico" ColumnName="Pec Tecnico" />
+                <ScalarProperty Name="IstatComune" ColumnName="IstatComune" />
+                <ScalarProperty Name="Comune" ColumnName="Comune" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Foglio" ColumnName="Foglio" />
+                <ScalarProperty Name="Mappale" ColumnName="Mappale" />
+                <ScalarProperty Name="Indirizzo" ColumnName="Indirizzo" />
+                <ScalarProperty Name="DestinazioneUso" ColumnName="DestinazioneUso" />
+                <ScalarProperty Name="LivelloOperativo" ColumnName="LivelloOperativo" />
+                <ScalarProperty Name="Casa_1_2" ColumnName="Casa_1_2" />
+                <ScalarProperty Name="ImpresaAppaltatrice" ColumnName="ImpresaAppaltatrice" />
+                <ScalarProperty Name="ImpresaAppaltatricePartitaIva" ColumnName="ImpresaAppaltatricePartitaIva" />
+                <ScalarProperty Name="ImpresaAppaltatriceCodiceFiscale" ColumnName="ImpresaAppaltatriceCodiceFiscale" />
+                <ScalarProperty Name="DataInvioChecklistComune" ColumnName="DataInvioChecklistComune" />
+                <ScalarProperty Name="DataAvvisoRigetto1" ColumnName="DataAvvisoRigetto1" />
+                <ScalarProperty Name="PraticaRigettata" ColumnName="PraticaRigettata" />
+                <ScalarProperty Name="DataInizioIstruttoriaUSR" ColumnName="DataInizioIstruttoriaUSR" />
+                <ScalarProperty Name="DataTrasmissioneAComune" ColumnName="DataTrasmissioneAComune" />
+                <ScalarProperty Name="DataSospensionePerimetrazioni" ColumnName="DataSospensionePerimetrazioni" />
+                <ScalarProperty Name="DataRilascioPdC" ColumnName="DataRilascioPdC" />
+                <ScalarProperty Name="DataScadenzaRispostaComune" ColumnName="DataScadenzaRispostaComune" />
+                <ScalarProperty Name="DataPrimaRichiestaIntComune" ColumnName="DataPrimaRichiestaIntComune" />
+                <ScalarProperty Name="DataUltimaRichiestaIntComune" ColumnName="DataUltimaRichiestaIntComune" />
+                <ScalarProperty Name="DataRicezioneUltimaIntComune" ColumnName="DataRicezioneUltimaIntComune" />
+                <ScalarProperty Name="DataSanatoria" ColumnName="DataSanatoria" />
+                <ScalarProperty Name="SanatoriaCompletata" ColumnName="SanatoriaCompletata" />
+                <ScalarProperty Name="DataRichiestaConferenzaReg" ColumnName="DataRichiestaConferenzaReg" />
+                <ScalarProperty Name="DataConvocazioneConferenzaReg" ColumnName="DataConvocazioneConferenzaReg" />
+                <ScalarProperty Name="DataEsitoConferenzaReg" ColumnName="DataEsitoConferenzaReg" />
+                <ScalarProperty Name="DataAttestatoAvvenutoDeposito" ColumnName="DataAttestatoAvvenutoDeposito" />
+                <ScalarProperty Name="DataPrimaRichiestaIntUSR" ColumnName="DataPrimaRichiestaIntUSR" />
+                <ScalarProperty Name="DataUltimaRichiestaIntUSR" ColumnName="DataUltimaRichiestaIntUSR" />
+                <ScalarProperty Name="DataRicezioneUltimaIntUSR" ColumnName="DataRicezioneUltimaIntUSR" />
+                <ScalarProperty Name="DataAvvisoRigetto2" ColumnName="DataAvvisoRigetto2" />
+                <ScalarProperty Name="DataTrasmDecretoRigetto" ColumnName="DataTrasmDecretoRigetto" />
+                <ScalarProperty Name="DataAutProrogaFL" ColumnName="DataAutProrogaFL" />
+                <ScalarProperty Name="NumDecretoContributo" ColumnName="NumDecretoContributo" />
+                <ScalarProperty Name="DataDecretoContributo" ColumnName="DataDecretoContributo" />
+                <ScalarProperty Name="ContributoConcesso" ColumnName="ContributoConcesso" />
+                <ScalarProperty Name="NumDecretoRideterminato" ColumnName="NumDecretoRideterminato" />
+                <ScalarProperty Name="DataDecretoRideterminato" ColumnName="DataDecretoRideterminato" />
+                <ScalarProperty Name="DataPresentazioneSal0" ColumnName="DataPresentazioneSal0" />
+                <ScalarProperty Name="DataPresentazioneSal20" ColumnName="DataPresentazioneSal20" />
+                <ScalarProperty Name="DataPresentazioneSal40" ColumnName="DataPresentazioneSal40" />
+                <ScalarProperty Name="DataPresentazioneSal50" ColumnName="DataPresentazioneSal50" />
+                <ScalarProperty Name="DataPresentazioneSal70" ColumnName="DataPresentazioneSal70" />
+                <ScalarProperty Name="DataPresentazioneSalFL" ColumnName="DataPresentazioneSalFL" />
+                <ScalarProperty Name="DataRichiestaProrogaFL" ColumnName="DataRichiestaProrogaFL" />
+                <ScalarProperty Name="DataUltimaRichiestaIntSAL" ColumnName="DataUltimaRichiestaIntSAL" />
+                <ScalarProperty Name="DataUltimaIntSal0" ColumnName="DataUltimaIntSal0" />
+                <ScalarProperty Name="DataUltimaIntSal20" ColumnName="DataUltimaIntSal20" />
+                <ScalarProperty Name="DataUltimaIntSal40" ColumnName="DataUltimaIntSal40" />
+                <ScalarProperty Name="DataUltimaIntSal50" ColumnName="DataUltimaIntSal50" />
+                <ScalarProperty Name="DataUltimaIntSal70" ColumnName="DataUltimaIntSal70" />
+                <ScalarProperty Name="DataUltimaIntSalFL" ColumnName="DataUltimaIntSalFL" />
+                <ScalarProperty Name="ContributoRichiesto" ColumnName="ContributoRichiesto" />
+                <ScalarProperty Name="ContributoRideterminato" ColumnName="ContributoRideterminato" />
+                <ScalarProperty Name="ContributoAmmissibile" ColumnName="ContributoAmmissibile" />
+                <ScalarProperty Name="ContributoLiquidato" ColumnName="ContributoLiquidato" />
+                <ScalarProperty Name="NumSalPresentati" ColumnName="NumSalPresentati" />
+                <ScalarProperty Name="DataDecretoSal0" ColumnName="DataDecretoSal0" />
+                <ScalarProperty Name="NumeroDecretoSal0" ColumnName="NumeroDecretoSal0" />
+                <ScalarProperty Name="ImportoSal0Anticipo" ColumnName="ImportoSal0Anticipo" />
+                <ScalarProperty Name="ImportoSal0Spese" ColumnName="ImportoSal0Spese" />
+                <ScalarProperty Name="ImportoSal0Totale" ColumnName="ImportoSal0Totale" />
+                <ScalarProperty Name="DataDecretoSal20" ColumnName="DataDecretoSal20" />
+                <ScalarProperty Name="NumeroDecretoSal20" ColumnName="NumeroDecretoSal20" />
+                <ScalarProperty Name="ImportoSal20Totale" ColumnName="ImportoSal20Totale" />
+                <ScalarProperty Name="DataDecretoSal40" ColumnName="DataDecretoSal40" />
+                <ScalarProperty Name="NumeroDecretoSal40" ColumnName="NumeroDecretoSal40" />
+                <ScalarProperty Name="ImportoSal40Totale" ColumnName="ImportoSal40Totale" />
+                <ScalarProperty Name="DataDecretoSal50" ColumnName="DataDecretoSal50" />
+                <ScalarProperty Name="NumeroDecretoSal50" ColumnName="NumeroDecretoSal50" />
+                <ScalarProperty Name="ImportoSal50Totale" ColumnName="ImportoSal50Totale" />
+                <ScalarProperty Name="DataDecretoSal70" ColumnName="DataDecretoSal70" />
+                <ScalarProperty Name="NumeroDecretoSal70" ColumnName="NumeroDecretoSal70" />
+                <ScalarProperty Name="ImportoSal70Totale" ColumnName="ImportoSal70Totale" />
+                <ScalarProperty Name="DataDecretoSalFL" ColumnName="DataDecretoSalFL" />
+                <ScalarProperty Name="NumeroDecretoSalFL" ColumnName="NumeroDecretoSalFL" />
+                <ScalarProperty Name="ImportoSalFLTotale" ColumnName="ImportoSalFLTotale" />
+                <ScalarProperty Name="RitiroDomanda" ColumnName="RitiroDomanda" />
+                <ScalarProperty Name="StatoPratica" ColumnName="StatoPratica" />
+                <ScalarProperty Name="CodStatoPratica" ColumnName="CodStatoPratica" />
+                <ScalarProperty Name="IsVariante" ColumnName="IsVariante" />
+                <ScalarProperty Name="SubAlterno1" ColumnName="SubAlterno1" />
+                <ScalarProperty Name="SubAlterno2" ColumnName="SubAlterno2" />
+                <ScalarProperty Name="SubAlterno3" ColumnName="SubAlterno3" />
+                <ScalarProperty Name="SubAlterno4" ColumnName="SubAlterno4" />
+                <ScalarProperty Name="CodiceAteco" ColumnName="CodiceAteco" />
+                <ScalarProperty Name="DataPresaInCaricoMIS" ColumnName="DataPresaInCaricoMIS" />
+                <ScalarProperty Name="Cup" ColumnName="Cup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

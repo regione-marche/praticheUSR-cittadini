@@ -1,0 +1,2 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EsecuzioneLavori.aspx.cs" Inherits="RicercaPratiche.DesktopModules.RegioneMarche2016.RicercaPratiche.Dettagli.EsecuzioneLavori" %>
+Lavori in esecuzione

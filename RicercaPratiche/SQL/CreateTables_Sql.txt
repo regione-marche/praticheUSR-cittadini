@@ -1,0 +1,207 @@
+﻿
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
+-- --------------------------------------------------
+-- Date Created: 01/13/2020 12:32:16
+-- Generated from EDMX file: C:\Users\sergio_villarreal\source\repos\regione-marche\praticheUSR-cittadini\RicercaPratiche\Models\wsSisma16DBModel.edmx
+-- --------------------------------------------------
+
+SET QUOTED_IDENTIFIER OFF;
+GO
+USE [DATABASENAME];
+GO
+IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
+GO
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[tmpVB01StatoFasiPratica]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tmpVB01StatoFasiPratica];
+GO
+IF OBJECT_ID(N'[wsSisma16DBEntitiesStoreContainer].[tmpvB02DettaglioPratica]', 'U') IS NOT NULL
+    DROP TABLE [wsSisma16DBEntitiesStoreContainer].[tmpvB02DettaglioPratica];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'tmpVB01StatoFasiPratica'
+CREATE TABLE [dbo].[tmpVB01StatoFasiPratica] (
+    [IdRichiesta] int  NOT NULL,
+    [CodiceFascicolo] varchar(50)  NULL,
+    [Ordinanza] varchar(50)  NULL,
+    [DestinazioneUso] varchar(255)  NULL,
+    [Comune] varchar(50)  NULL,
+    [IstatComune] varchar(255)  NULL,
+    [CodiceProvincia] varchar(20)  NULL,
+    [VerificaAmmissibilitaUSR] varchar(1)  NULL,
+    [VerificaAmmissibilitaCM] varchar(1)  NULL,
+    [PreavvisoRigetto1] varchar(1)  NULL,
+    [PraticaRigettata1] int  NOT NULL,
+    [IstruttoriaCM] varchar(1)  NULL,
+    [RichiestaIntegrazioniCM] varchar(1)  NULL,
+    [SanatoriaCM] varchar(1)  NULL,
+    [ConferenzaRegionale] varchar(1)  NULL,
+    [IstruttoriaUSR] varchar(1)  NULL,
+    [RichiestaIntegrazioniUSR] varchar(1)  NULL,
+    [ControlloSismico] varchar(1)  NULL,
+    [PreavvisoRigetto2] varchar(1)  NULL,
+    [PraticaRigettata2] int  NOT NULL,
+    [ConcessioneContributoUSR] varchar(1)  NULL,
+    [EsecuzioneLavori] varchar(1)  NULL,
+    [IstruttoriaSAL] varchar(1)  NULL,
+    [RichiestaIntegrazioniSAL] varchar(1)  NULL,
+    [AutorizzazionePagamento] varchar(1)  NULL,
+    [PraticaConclusa] int  NOT NULL,
+    [Rinuncia] int  NOT NULL
+);
+GO
+
+-- Creating table 'tmpvB02DettaglioPratica'
+CREATE TABLE [dbo].[tmpvB02DettaglioPratica] (
+    [IdRichiesta] int  NOT NULL,
+    [CodiceFascicolo] varchar(50)  NULL,
+    [CodicePratica] varchar(255)  NULL,
+    [NumeroIntervento] varchar(50)  NULL,
+    [Ordinanza] varchar(50)  NULL,
+    [IstruttoreUSR] varchar(101)  NULL,
+    [EmailIstruttoreUSR] varchar(255)  NULL,
+    [GruppoIstruttoreUSR] varchar(50)  NULL,
+    [IdUtenteIstruttoreUSR] int  NULL,
+    [IdUtenteIstruttoreSAL] int  NULL,
+    [IstruttoreSAL] varchar(101)  NULL,
+    [EmailIstruttoreSAL] varchar(255)  NULL,
+    [GruppoIstruttoreSAL] varchar(50)  NULL,
+    [NumProtocollo] int  NULL,
+    [DataProtocollo] datetime  NULL,
+    [NumPrimoProtocollo] int  NULL,
+    [DataPrimoProtocollo] datetime  NULL,
+    [Intestatario] varchar(255)  NULL,
+    [CodiceFiscaleIntestatario] varchar(255)  NULL,
+    [Progettista] varchar(255)  NULL,
+    [CodiceFiscaleProgettista] varchar(255)  NULL,
+    [Pec_Tecnico] varchar(255)  NULL,
+    [IstatComune] varchar(255)  NULL,
+    [Comune] varchar(50)  NULL,
+    [Provincia] varchar(20)  NULL,
+    [Foglio] varchar(255)  NULL,
+    [Mappale] varchar(255)  NULL,
+    [Indirizzo] varchar(255)  NULL,
+    [DestinazioneUso] varchar(255)  NULL,
+    [LivelloOperativo] varchar(2)  NOT NULL,
+    [Casa_1_2] nvarchar(2)  NOT NULL,
+    [ImpresaAppaltatrice] varchar(255)  NULL,
+    [ImpresaAppaltatricePartitaIva] varchar(255)  NULL,
+    [ImpresaAppaltatriceCodiceFiscale] varchar(255)  NULL,
+    [DataInvioChecklistComune] datetime  NULL,
+    [DataAvvisoRigetto1] datetime  NULL,
+    [PraticaRigettata] int  NOT NULL,
+    [DataInizioIstruttoriaUSR] datetime  NULL,
+    [DataTrasmissioneAComune] datetime  NULL,
+    [DataSospensionePerimetrazioni] datetime  NULL,
+    [DataRilascioPdC] datetime  NULL,
+    [DataScadenzaRispostaComune] datetime  NULL,
+    [DataPrimaRichiestaIntComune] datetime  NULL,
+    [DataUltimaRichiestaIntComune] datetime  NULL,
+    [DataRicezioneUltimaIntComune] datetime  NULL,
+    [DataSanatoria] datetime  NULL,
+    [SanatoriaCompletata] int  NOT NULL,
+    [DataRichiestaConferenzaReg] datetime  NULL,
+    [DataConvocazioneConferenzaReg] datetime  NULL,
+    [DataEsitoConferenzaReg] datetime  NULL,
+    [DataAttestatoAvvenutoDeposito] datetime  NULL,
+    [DataPrimaRichiestaIntUSR] datetime  NULL,
+    [DataUltimaRichiestaIntUSR] datetime  NULL,
+    [DataRicezioneUltimaIntUSR] datetime  NULL,
+    [DataAvvisoRigetto2] datetime  NULL,
+    [DataTrasmDecretoRigetto] datetime  NULL,
+    [DataAutProrogaFL] datetime  NULL,
+    [NumDecretoContributo] varchar(50)  NULL,
+    [DataDecretoContributo] datetime  NULL,
+    [ContributoConcesso] decimal(18,2)  NULL,
+    [NumDecretoRideterminato] varchar(50)  NULL,
+    [DataDecretoRideterminato] datetime  NULL,
+    [DataPresentazioneSal0] datetime  NULL,
+    [DataPresentazioneSal20] datetime  NULL,
+    [DataPresentazioneSal40] datetime  NULL,
+    [DataPresentazioneSal50] datetime  NULL,
+    [DataPresentazioneSal70] datetime  NULL,
+    [DataPresentazioneSalFL] datetime  NULL,
+    [DataRichiestaProrogaFL] datetime  NULL,
+    [DataUltimaRichiestaIntSAL] datetime  NULL,
+    [DataUltimaIntSal0] datetime  NULL,
+    [DataUltimaIntSal20] datetime  NULL,
+    [DataUltimaIntSal40] datetime  NULL,
+    [DataUltimaIntSal50] datetime  NULL,
+    [DataUltimaIntSal70] datetime  NULL,
+    [DataUltimaIntSalFL] datetime  NULL,
+    [ContributoRichiesto] decimal(18,2)  NULL,
+    [ContributoRideterminato] decimal(18,2)  NULL,
+    [ContributoAmmissibile] decimal(18,2)  NULL,
+    [ContributoLiquidato] decimal(38,2)  NULL,
+    [NumSalPresentati] int  NULL,
+    [DataDecretoSal0] datetime  NULL,
+    [NumeroDecretoSal0] varchar(50)  NULL,
+    [ImportoSal0Anticipo] decimal(18,2)  NULL,
+    [ImportoSal0Spese] decimal(18,2)  NULL,
+    [ImportoSal0Totale] decimal(19,2)  NULL,
+    [DataDecretoSal20] datetime  NULL,
+    [NumeroDecretoSal20] varchar(50)  NULL,
+    [ImportoSal20Totale] decimal(18,2)  NULL,
+    [DataDecretoSal40] datetime  NULL,
+    [NumeroDecretoSal40] varchar(50)  NULL,
+    [ImportoSal40Totale] decimal(18,2)  NULL,
+    [DataDecretoSal50] datetime  NULL,
+    [NumeroDecretoSal50] varchar(50)  NULL,
+    [ImportoSal50Totale] decimal(18,2)  NULL,
+    [DataDecretoSal70] datetime  NULL,
+    [NumeroDecretoSal70] varchar(50)  NULL,
+    [ImportoSal70Totale] decimal(18,2)  NULL,
+    [DataDecretoSalFL] datetime  NULL,
+    [NumeroDecretoSalFL] varchar(50)  NULL,
+    [ImportoSalFLTotale] decimal(18,2)  NULL,
+    [RitiroDomanda] int  NOT NULL,
+    [StatoPratica] nvarchar(49)  NULL,
+    [CodStatoPratica] varchar(24)  NULL,
+    [IsVariante] int  NOT NULL,
+    [SubAlterno1] varchar(255)  NULL,
+    [SubAlterno2] varchar(255)  NULL,
+    [SubAlterno3] varchar(255)  NULL,
+    [SubAlterno4] varchar(255)  NULL,
+    [CodiceAteco] varchar(767)  NULL,
+    [DataPresaInCaricoMIS] datetime  NULL,
+    [Cup] varchar(50)  NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [IdRichiesta] in table 'tmpVB01StatoFasiPratica'
+ALTER TABLE [dbo].[tmpVB01StatoFasiPratica]
+ADD CONSTRAINT [PK_tmpVB01StatoFasiPratica]
+    PRIMARY KEY CLUSTERED ([IdRichiesta] ASC);
+GO
+
+-- Creating primary key on [IdRichiesta], [LivelloOperativo], [Casa_1_2], [PraticaRigettata], [SanatoriaCompletata], [RitiroDomanda], [IsVariante] in table 'tmpvB02DettaglioPratica'
+ALTER TABLE [dbo].[tmpvB02DettaglioPratica]
+ADD CONSTRAINT [PK_tmpvB02DettaglioPratica]
+    PRIMARY KEY CLUSTERED ([IdRichiesta], [LivelloOperativo], [Casa_1_2], [PraticaRigettata], [SanatoriaCompletata], [RitiroDomanda], [IsVariante] ASC);
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------
