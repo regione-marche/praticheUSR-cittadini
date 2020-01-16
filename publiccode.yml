@@ -1,0 +1,79 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+categories:
+  - accounting
+dependsOn:
+  proprietary:
+    - name: DotNetNuke
+      optional: false
+      version: ''
+      versionMax: 9.x
+      versionMin: 7.x
+    - name: SqlServer
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: 2008 r2
+description:
+  it:
+    documentation: >-
+      https://github.com/regione-marche/praticheUSR-cittadini/blob/master/Readme.md
+    features:
+      - funzionalità
+    genericName: nome generico - categoria
+    longDescription: |2
+       **Lorem Ipsum** è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum. 
+
+       **Lorem Ipsum** è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum. 
+
+       **Lorem Ipsum** è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum. 
+
+      ​
+
+      ​
+    shortDescription: breve descrizione
+developmentStatus: stable
+it:
+  conforme:
+    gdpr: false
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: false
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+  riuso:
+    codiceIPA: r_marche
+landingURL: >-
+  http://www.regione.marche.it/Regione-Utile/Ricostruzione-Marche/Pratiche-presentate-USR
+legal:
+  authorsFile: >-
+    https://raw.githubusercontent.com/regione-marche/praticheUSR-cittadini/master/AUTHORS.md
+  license: GPL-3.0-or-later
+  mainCopyrightOwner: Regione Marche
+  repoOwner: Regione Marche
+localisation:
+  availableLanguages:
+    - it
+  localisationReady: false
+maintenance:
+  contacts:
+    - affiliation: Regione Marche
+      email: andrea.sergiacomi@regione.marche.it
+      name: Andrea Sergiacomi
+  type: internal
+name: praticheUSR-cittadini
+platforms:
+  - windows
+releaseDate: '2019-06-01'
+softwareType: library
+softwareVersion: 1.0.2
+url: 'https://github.com/regione-marche/praticheUSR-cittadini'
+usedBy:
+  - Regione Marche
