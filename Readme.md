@@ -26,3 +26,10 @@ del sistema informativo **DOMUS** di **Regione Marche**, sintetizzati in una vis
 e presentati in formato tabellare.
 
 ## Installazione
+
+## Screenshots:
+![praticheUSR-cittadini Screenshot 1](https://github.com/regione-marche/praticheUSR-cittadini/blob/master/doc/screenshots/Screen_1.png "praticheUSR-cittadini Screenshot 1")
+
+![praticheUSR-cittadini Screenshot 2](https://github.com/regione-marche/praticheUSR-cittadini/blob/master/doc/screenshots/Screen_2.png "praticheUSR-cittadini Screenshot 2")
+
+![praticheUSR-cittadini Screenshot 3](https://github.com/regione-marche/praticheUSR-cittadini/blob/master/doc/screenshots/Screen_3.png "praticheUSR-cittadini Screenshot 3")
