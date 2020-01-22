@@ -103,7 +103,6 @@
     <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\_Red.png" />
     <Content Include="DesktopModules\RegioneMarche2016\RicercaPratiche\_Yellow.png" />
     <Content Include="Global.asax" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="Models\wsSisma16DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>wsSisma16DBModel.edmx</DependentUpon>

@@ -4,7 +4,15 @@
 
 publiccodeYmlVersion: '0.2'
 categories:
-  - accounting
+  - business-process-management
+  - crm
+  - data-visualization
+  - document-management
+  - financial-reporting
+  - help-desk
+  - knowledge-management
+  - real-estate-management
+  - workflow-management
 dependsOn:
   proprietary:
     - name: DotNetNuke
@@ -22,26 +30,44 @@ description:
     documentation: >-
       https://github.com/regione-marche/praticheUSR-cittadini/blob/master/Readme.md
     features:
-      - funzionalità
-    genericName: nome generico - categoria
-    longDescription: |2
-       **Lorem Ipsum** è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum. 
+      - ricerca pratiche USR per codice fiscale del cittadino intestatario
+      - ricerca pratiche USR per partita iva dell'impresa appaltatrice
+    genericName: Pratiche presentate U.S.R. - ricostruzione post sisma 2016
+    longDescription: >
+      Le pagine rendono disponibili i dati relativi alle pratiche presentate presso gli Uffici di ricostruzione(Usr) in merito alle  Ordinanze:
 
-       **Lorem Ipsum** è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum. 
+      - 4-2016 (Danni lievi su immobili a prevalente destinazione d'uso
+      abitativa o produttiva);
 
-       **Lorem Ipsum** è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum. 
+      - 9-2016 (Delocalizzazione temporanea di attività produttive);
 
-      ​
+      - 13-2017 (Ripristino e ricostruzione di immobili produttivi);
 
-      ​
-    shortDescription: breve descrizione
+      - 19-2017 (Ricostruzione pesante).
+
+      Accedendo con il codice fiscale dell'intestatario dell'istanza o con la
+      partita IVA dell'impresa appaltatrice, viene presentato il dettaglio dello
+      stato di avanzamento della pratica e dei soggetti presso cui l'esame della
+      documentazione o l'attività di processamento richiesta è in corso (Comune,
+      USR, Conferenza di Servizi, Progettista, etc.).
+
+      I dati visualizzati vengono estratti dai workflow, dai DB e dai repository
+      del sistema informativo DOMUS di Regione Marche, sintetizzati in una vista
+      e presentati in formato tabellare.
+    shortDescription: >-
+    Ricerca pratiche USR con presentazione dei relativi dat e documenti pubblici, processi delle PA coinvolte e stato di avanzamento.
 developmentStatus: stable
+intendedAudience:
+  scope:
+    - emergency-services
+    - government
+    - local-authorities
 it:
   conforme:
-    gdpr: false
-    lineeGuidaDesign: false
-    misureMinimeSicurezza: false
-    modelloInteroperabilita: false
+    gdpr: true
+    lineeGuidaDesign: true
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: true
   countryExtensionVersion: '0.2'
   piattaforme:
     anpr: false
@@ -71,8 +97,9 @@ maintenance:
 name: praticheUSR-cittadini
 platforms:
   - windows
+  - web
 releaseDate: '2019-06-01'
-softwareType: library
+softwareType: standalone/web
 softwareVersion: 1.0.2
 url: 'https://github.com/regione-marche/praticheUSR-cittadini'
 usedBy:

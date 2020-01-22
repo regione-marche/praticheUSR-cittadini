@@ -49,16 +49,27 @@ namespace RicercaPratiche.DesktopModules.RegioneMarche2016.RicercaPratiche
 		/// <param name="e"></param>
 		protected void btn_search_ServerClick(object sender, EventArgs e)
 		{
-			/* */
+			/* RICERCA PER PARTITA IVA */
 			var pratiche = (from tba in Db.tmpvB02DettaglioPratica
 							join tbb in db.tmpVB01StatoFasiPratica on tba.IdRichiesta equals tbb.IdRichiesta
-							where tba.ImpresaAppaltatricePartitaIva == this.txt_Piva.Text
+							where tba.ImpresaAppaltatricePartitaIva == this.txt_Ricerca.Text
 							orderby tba.DataProtocollo ascending
 							select new JoinedClass()
 							{
 								StatoPraticheDettaglioEsteso = tba,
 								VB01StatoFasiPratica = tbb
 							}).Take(50);
+
+			/* RICERCA PER CODICE FISCALE */
+			//var pratiche = (from tba in Db.tmpvB02DettaglioPratica
+			//				join tbb in db.tmpVB01StatoFasiPratica on tba.IdRichiesta equals tbb.IdRichiesta
+			//				where tba.CodiceFiscaleIntestatario == this.txt_Ricerca.Text
+			//				orderby tba.DataProtocollo ascending
+			//				select new JoinedClass()
+			//				{
+			//					StatoPraticheDettaglioEsteso = tba,
+			//					VB01StatoFasiPratica = tbb
+			//				}).Take(50);
 
 			/* */
 			this.pnl_NoResults.Visible = false;

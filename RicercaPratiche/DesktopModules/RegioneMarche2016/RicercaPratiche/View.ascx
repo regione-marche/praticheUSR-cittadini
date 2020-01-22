@@ -10,7 +10,7 @@
 			<div class="form-group">
 				<label for="email">Partita Iva: </label>
 				<br />
-				<asp:TextBox ID="txt_Piva" runat="server" CssClass="form-control" placeholder="inserisca la P.Iva da ricercare">
+				<asp:TextBox ID="txt_Ricerca" runat="server" CssClass="form-control" placeholder="inserisca la P.Iva da ricercare">
 				</asp:TextBox>
 			</div>
 
