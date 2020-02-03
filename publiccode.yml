@@ -32,7 +32,7 @@ description:
     features:
       - ricerca pratiche USR per codice fiscale del cittadino intestatario
       - ricerca pratiche USR per partita iva dell'impresa appaltatrice
-    genericName: Pratiche presentate U.S.R. - ricostruzione post sisma 2016
+    genericName: Pratiche presentate U.S.R. 
     longDescription: >
       Le pagine rendono disponibili i dati relativi alle pratiche presentate presso gli Uffici di ricostruzione(Usr) in merito alle  Ordinanze:
 
@@ -55,7 +55,7 @@ description:
       del sistema informativo DOMUS di Regione Marche, sintetizzati in una vista
       e presentati in formato tabellare.
     shortDescription: >-
-    Ricerca pratiche USR con presentazione dei relativi dat e documenti pubblici, processi delle PA coinvolte e stato di avanzamento.
+      Ricerca pratiche USR con presentazione dei relativi dat e documenti pubblici, processi delle PA coinvolte e stato di avanzamento.
     screenshots:
       - doc/screenshots/Screen_1.png
       - doc/screenshots/Screen_2.png
