@@ -56,10 +56,10 @@ description:
       e presentati in formato tabellare.
     shortDescription: >-
       Ricerca pratiche USR con presentazione dei relativi dat e documenti pubblici, processi delle PA coinvolte e stato di avanzamento.
-      screenshots:
-        - doc/screenshots/Screen_1.png
-        - doc/screenshots/Screen_2.png
-        - doc/screenshots/Screen_3.png
+    screenshots:
+      - doc/screenshots/Screen_1.png
+      - doc/screenshots/Screen_2.png
+      - doc/screenshots/Screen_3.png
 developmentStatus: stable
 intendedAudience:
   scope:
