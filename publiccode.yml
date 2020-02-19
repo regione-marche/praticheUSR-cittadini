@@ -1,8 +1,8 @@
-# This repository adheres to the publiccode.yml standard by including this 
+# This repository adheres to the publiccode.yml standard by including this
 # metadata file that makes public software easily discoverable.
 # More info at https://github.com/italia/publiccode.yml
 
-publiccodeYmlVersion: '0.2'
+publiccodeYmlVersion: "0.2"
 categories:
   - business-process-management
   - crm
@@ -17,13 +17,13 @@ dependsOn:
   proprietary:
     - name: DotNetNuke
       optional: false
-      version: ''
+      version: ""
       versionMax: 9.x
       versionMin: 7.x
     - name: SqlServer
       optional: false
-      version: ''
-      versionMax: ''
+      version: ""
+      versionMax: ""
       versionMin: 2008 r2
 description:
   it:
@@ -55,11 +55,11 @@ description:
       del sistema informativo DOMUS di Regione Marche, sintetizzati in una vista
       e presentati in formato tabellare.
     shortDescription: >-
-    Ricerca pratiche USR con presentazione dei relativi dat e documenti pubblici, processi delle PA coinvolte e stato di avanzamento.
-    screenshots:
-      - doc/screenshots/Screen_1.png
-      - doc/screenshots/Screen_2.png
-      - doc/screenshots/Screen_3.png
+      Ricerca pratiche USR con presentazione dei relativi dat e documenti pubblici, processi delle PA coinvolte e stato di avanzamento.
+      screenshots:
+        - doc/screenshots/Screen_1.png
+        - doc/screenshots/Screen_2.png
+        - doc/screenshots/Screen_3.png
 developmentStatus: stable
 intendedAudience:
   scope:
@@ -72,7 +72,7 @@ it:
     lineeGuidaDesign: true
     misureMinimeSicurezza: true
     modelloInteroperabilita: true
-  countryExtensionVersion: '0.2'
+  countryExtensionVersion: "0.2"
   piattaforme:
     anpr: false
     cie: false
@@ -102,10 +102,9 @@ name: praticheUSR-cittadini
 platforms:
   - windows
   - web
-releaseDate: '2019-06-01'
+releaseDate: "2019-06-01"
 softwareType: standalone/web
 softwareVersion: 1.0.2
-url: 'https://github.com/regione-marche/praticheUSR-cittadini'
+url: "https://github.com/regione-marche/praticheUSR-cittadini"
 usedBy:
   - Regione Marche
-
